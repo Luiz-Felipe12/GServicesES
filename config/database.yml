@@ -13,6 +13,14 @@ development:
   <<: *default
   database: db/development.sqlite3
 
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
+
 actions:
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -23,12 +31,6 @@ actions:
   password: <%= ENV.fetch('PG_PASSWORD', 'password') %>
   port:     <%= ENV.fetch('PG_PORT', 5432) %>
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
 
 production:
   <<: *default
