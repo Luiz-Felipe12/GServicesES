@@ -5,7 +5,7 @@
 ## :page_with_curl: Sobre o Projeto
 O projeto é referente a 2ª Verificação de Aprendizagem da disciplina de __Engenharia de Software__ ministrada pelo Professor Dr. [Rodrigo Andrade](https://github.com/rcaa), da UFAPE, no período 2021.2. 
 
-*   [Site no Heroku]
+*   [Site no Heroku](https://polar-citadel-89318.herokuapp.com/)
 
 ## :pushpin: Objetivos
 O sistema visa conectar trabalhadores independentes com potenciais clientes, deve ter as funcionalidades de cadastrar, editar, remover e visualizar,
@@ -20,8 +20,8 @@ segurança para seus usuários, deve existir o usuário administrador capaz de f
 *   Versão 3.1.1
 ### [Rails](https://rubyonrails.org/)
 *   Versão 7.0.2.2
-### [Heroku]
-### [Codacy]
+### [Heroku](https://www.heroku.com/)
+### [Codacy](https://www.codacy.com/product)
 ### [Travis CI]
 
 ## :construction: Status do Projeto
