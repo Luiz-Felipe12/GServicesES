@@ -22,7 +22,6 @@ segurança para seus usuários, deve existir o usuário administrador capaz de f
 *   Versão 7.0.2.2
 ### [Heroku](https://www.heroku.com/)
 ### [Codacy](https://www.codacy.com/product)
-### [Travis CI]()
 
 ## :construction: Status do Projeto
 Em construção...
