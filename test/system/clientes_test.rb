@@ -14,9 +14,14 @@ class ClientesTest < ApplicationSystemTestCase
     visit clientes_url
     click_on "New cliente"
 
+    fill_in "Bairro", with: @cliente.bairro
+    fill_in "Cep", with: @cliente.cep
+    fill_in "Cidade", with: @cliente.cidade
+    fill_in "Complemento", with: @cliente.complemento
     fill_in "Cpf", with: @cliente.cpf
     fill_in "Data de nascimento", with: @cliente.data_de_nascimento
     fill_in "Email", with: @cliente.email
+    fill_in "Logradouro", with: @cliente.logradouro
     fill_in "Nome completo", with: @cliente.nome_completo
     fill_in "Senha", with: @cliente.senha
     fill_in "Telefone", with: @cliente.telefone
@@ -30,9 +35,14 @@ class ClientesTest < ApplicationSystemTestCase
     visit cliente_url(@cliente)
     click_on "Edit this cliente", match: :first
 
+    fill_in "Bairro", with: @cliente.bairro
+    fill_in "Cep", with: @cliente.cep
+    fill_in "Cidade", with: @cliente.cidade
+    fill_in "Complemento", with: @cliente.complemento
     fill_in "Cpf", with: @cliente.cpf
     fill_in "Data de nascimento", with: @cliente.data_de_nascimento
     fill_in "Email", with: @cliente.email
+    fill_in "Logradouro", with: @cliente.logradouro
     fill_in "Nome completo", with: @cliente.nome_completo
     fill_in "Senha", with: @cliente.senha
     fill_in "Telefone", with: @cliente.telefone
