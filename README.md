@@ -1,7 +1,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f4a2345f678c44b1a63bd23fc8b7d2e5)](https://www.codacy.com/gh/GServicesES/GServicesES/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GServicesES/GServicesES&amp;utm_campaign=Badge_Grade)
 # Sistema de oferta de serviços gerais
 ## :octocat: Integrantes
-[Geisianny B. ](https://github.com/Geisianny) |[ Giclaynne Y. ](https://github.com/giclayne) |[ Hadassa E. ](https://github.com/Hester910) |[ Luiz Felipe](https://github.com/Luiz-Felipe12)
+[Geisianny B.](https://github.com/Geisianny) |[Giclaynne Y.](https://github.com/giclayne) |[Hadassa E.](https://github.com/Hester910) |[Luiz Felipe](https://github.com/Luiz-Felipe12)
 ## :page_with_curl: Sobre o Projeto
 O projeto é referente a 2ª Verificação de Aprendizagem da disciplina de __Engenharia de Software__ ministrada pelo Professor Dr. [Rodrigo Andrade](https://github.com/rcaa), da UFAPE, no período 2021.2. 
 
