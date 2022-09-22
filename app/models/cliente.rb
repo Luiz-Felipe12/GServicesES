@@ -9,8 +9,8 @@ class Cliente < ApplicationRecord
   validates :telefone, presence: {message: 'Telefone para contato obrigatório'}, length: {is: 11, message: 'Precisa ter 11 dígitos'}
   validates :logradouro, presence: true, length: {maximum: 40}
   validates :complemento, presence: true, length: {maximum: 40}
-  validates :bairro, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-Z]/}
-  validates :cidade, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-Z]/}
+  validates :bairro, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-z ]+\z/}
+  validates :cidade, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-z ]+\z/}
   validates :cep, presence: true, length: {minimum:8, maximum: 8}, numericality: {only_integer: true}
   validates :senha, presence: {message: 'Senha obrigatória'}, length: {minumum: 5, maximum: 20}, uniqueness: true
   validate :valida_data
