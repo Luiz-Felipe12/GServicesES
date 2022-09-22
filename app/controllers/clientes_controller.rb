@@ -17,6 +17,7 @@ class ClientesController < ApplicationController
 
   # GET /clientes/1/edit
   def edit
+    @cliente = Cliente.find(params[:id])
   end
 
   # POST /clientes or /clientes.json
@@ -36,6 +37,7 @@ class ClientesController < ApplicationController
 
   # PATCH/PUT /clientes/1 or /clientes/1.json
   def update
+    @cliente = Cliente.find(params[:id])
     respond_to do |format|
       if @cliente.update(cliente_params)
         format.html { redirect_to cliente_url(@cliente), notice: "Cliente was successfully updated." }
@@ -49,6 +51,7 @@ class ClientesController < ApplicationController
 
   # DELETE /clientes/1 or /clientes/1.json
   def destroy
+    @cliente = Cliente.find(params[:id])
     @cliente.destroy
 
     respond_to do |format|
@@ -65,6 +68,6 @@ class ClientesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cliente_params
-      params.require(:cliente).permit(:nome_completo, :data_de_nascimento, :email, :telefone, :cpf, :senha)
+      params.require(:cliente).permit(:nome_completo, :data_de_nascimento, :cpf, :email, :telefone, :logradouro, :complemento, :bairro, :cidade, :cep, :senha)
     end
 end

@@ -17,7 +17,7 @@ class ClientesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cliente" do
     assert_difference("Cliente.count") do
-      post clientes_url, params: { cliente: { cpf: @cliente.cpf, data_de_nascimento: @cliente.data_de_nascimento, email: @cliente.email, nome_completo: @cliente.nome_completo, senha: @cliente.senha, telefone: @cliente.telefone } }
+      post clientes_url, params: { cliente: { bairro: @cliente.bairro, cep: @cliente.cep, cidade: @cliente.cidade, complemento: @cliente.complemento, cpf: @cliente.cpf, data_de_nascimento: @cliente.data_de_nascimento, email: @cliente.email, logradouro: @cliente.logradouro, nome_completo: @cliente.nome_completo, senha: @cliente.senha, telefone: @cliente.telefone } }
     end
 
     assert_redirected_to cliente_url(Cliente.last)
@@ -34,7 +34,7 @@ class ClientesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cliente" do
-    patch cliente_url(@cliente), params: { cliente: { cpf: @cliente.cpf, data_de_nascimento: @cliente.data_de_nascimento, email: @cliente.email, nome_completo: @cliente.nome_completo, senha: @cliente.senha, telefone: @cliente.telefone } }
+    patch cliente_url(@cliente), params: { cliente: { bairro: @cliente.bairro, cep: @cliente.cep, cidade: @cliente.cidade, complemento: @cliente.complemento, cpf: @cliente.cpf, data_de_nascimento: @cliente.data_de_nascimento, email: @cliente.email, logradouro: @cliente.logradouro, nome_completo: @cliente.nome_completo, senha: @cliente.senha, telefone: @cliente.telefone } }
     assert_redirected_to cliente_url(@cliente)
   end
 

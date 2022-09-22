@@ -2,16 +2,26 @@
 
 one:
   nome_completo: MyString
-  data_de_nascimento: 2022-09-19
+  data_de_nascimento: 2022-09-21
+  cpf: MyString
   email: MyString
   telefone: MyString
-  cpf: MyString
+  logradouro: MyString
+  complemento: MyString
+  bairro: MyString
+  cidade: MyString
+  cep: MyString
   senha: MyString
 
 two:
   nome_completo: MyString
-  data_de_nascimento: 2022-09-19
+  data_de_nascimento: 2022-09-21
+  cpf: MyString
   email: MyString
   telefone: MyString
-  cpf: MyString
+  logradouro: MyString
+  complemento: MyString
+  bairro: MyString
+  cidade: MyString
+  cep: MyString
   senha: MyString
