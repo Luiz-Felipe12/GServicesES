@@ -2,7 +2,7 @@ class Cliente < ApplicationRecord
   has_many :contratoes
   has_many :servicos, through: :contrato
 
-  validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-Z]/}, length: {minimum: 8, maximum: 80}
+  validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-z ]+\z/}, length: {minimum: 8, maximum: 80}
   validates :data_de_nascimento, presence: {message: 'Data de nascimento obrigatória'}
   validates :cpf, presence: {message: 'CPF obrigatório'}, length: {minimum: 11, maximum: 11}, numericality: {only_integer: true}, uniqueness: true
   validates :email, presence: {message: 'E-mail obrigatório'}, format: {with: URI:: MailTo::EMAIL_REGEXP}, uniqueness: true
