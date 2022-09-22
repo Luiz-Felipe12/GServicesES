@@ -1,6 +1,6 @@
 class Cliente < ApplicationRecord
-  has_many :contrato
-  has_many :servico, through: :contrato
+  has_many :contratoes
+  has_many :servicos, through: :contrato
 
   validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-Z]/}, length: {minimum: 8, maximum: 80}
   validates :data_de_nascimento, presence: {message: 'Data de nascimento obrigatória'}
@@ -9,8 +9,8 @@ class Cliente < ApplicationRecord
   validates :telefone, presence: {message: 'Telefone para contato obrigatório'}, length: {is: 11, message: 'Precisa ter 11 dígitos'}
   validates :logradouro, presence: true, length: {maximum: 40}
   validates :complemento, presence: true, length: {maximum: 40}
-  validates :bairro, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-Z]+\z/}
-  validates :cidade, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-Z]+\z/}
+  validates :bairro, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-Z]/}
+  validates :cidade, presence: true, length: {maximum: 40}, format: { with: /\A[a-zA-Z]/}
   validates :cep, presence: true, length: {minimum:8, maximum: 8}, numericality: {only_integer: true}
   validates :senha, presence: {message: 'Senha obrigatória'}, length: {minumum: 5, maximum: 20}, uniqueness: true
   validate :valida_data
