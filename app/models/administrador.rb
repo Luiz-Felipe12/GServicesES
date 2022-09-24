@@ -1,6 +1,6 @@
 class Administrador < ApplicationRecord
 
-  validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-Z ]/}, length: {minimum: 8, maximum: 80}
+  validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-Z ]+\Z/}, length: {minimum: 8, maximum: 80}
   validates :data_de_nascimento, presence: {message: 'Data de nascimento obrigatória'}
   validates :email, presence: {message: 'E-mail obrigatório'}, format: {with: URI:: MailTo::EMAIL_REGEXP}, uniqueness: true
   validates :telefone, presence: {message: 'Telefone para contato obrigatório'}, length: {is: 11, message: 'Precisa ter 11 dígitos'}
