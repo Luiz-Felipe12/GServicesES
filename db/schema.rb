@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_23_133935) do
-  create_table "administradors", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_09_22_193021) do
+
+    create_table "administradors", force: :cascade do |t|
     t.string "nome_completo"
     t.date "data_de_nascimento"
     t.string "email"
@@ -20,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_133935) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "clientes", force: :cascade do |t|
     t.string "nome_completo"
     t.date "data_de_nascimento"
@@ -37,4 +38,40 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_133935) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "contratos", force: :cascade do |t|
+    t.integer "cliente_id", null: false
+    t.integer "servico_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cliente_id"], name: "index_contratos_on_cliente_id"
+    t.index ["servico_id"], name: "index_contratos_on_servico_id"
+  end
+
+  create_table "servicos", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.date "data"
+    t.time "horario_inicio"
+    t.time "horario_temino"
+    t.string "preco"
+    t.integer "trabalhador_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trabalhador_id"], name: "index_servicos_on_trabalhador_id"
+  end
+
+  create_table "trabalhadors", force: :cascade do |t|
+    t.string "nome_completo"
+    t.date "data_de_nascimento"
+    t.string "email"
+    t.string "telefone"
+    t.string "profissao"
+    t.string "senha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "contratos", "clientes"
+  add_foreign_key "contratos", "servicos"
+  add_foreign_key "servicos", "trabalhadors"
 end
