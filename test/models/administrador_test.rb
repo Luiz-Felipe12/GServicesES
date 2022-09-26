@@ -11,5 +11,26 @@ class AdministradorTest < ActiveSupport::TestCase
 
 
     assert administrador.save
+
   end
+
+  test 'Criando cadastro de administrador sem nome' do
+    administrador=Administrador.new data_de_nascimento: Time.zone.today,
+                                    email: 'marcos@gmail.com',
+                                    telefone:'40028922220',
+                                    senha:'123456788'
+
+    assert_not administrador.save
+  end
+
+  test 'Criando cadastro de administrador com senha existente' do
+    administrador=Administrador.new nome_completo: 'Garibaldo José',
+                                    data_de_nascimento: Time.zone.today,
+                                    email: 'garibaldo@gmail.com',
+                                    telefone:'40028922229',
+                                    senha:'123456788'
+
+    assert_not administrador.save
+  end
+
 end
