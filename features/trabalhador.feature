@@ -24,9 +24,10 @@ Feature: Trabalhador
     When Eu clico em minha conta com email 'rodrigoze@gmail.com'
     Then Eu vejo uma mensagem que o trabalhador com email 'rodrigoze@gmail.com' foi excluido
 
-  Scenario: Editar email trabalhador
-    Given Eu estou na pagina de trabalhador
-    And o trabalhador com nome_completo 'Rodrigo Silva', data_de_nascimento '10/12/1979', email 'rodrigoze@gmail.com', telefone '87987654321', profissao 'Auxiliar de Limpeza', senha '123456' existe
-    When Eu clico para editar meu email 'rodrigoze@gmail.com'
-    And Altero o email para 'rodrigosilva@gmail.com'
-    Then Eu vejo uma mensagem que o cadastro foi atualizado
+  Scenario: Editar nome trabalhador
+    Given Eu estou na pagina de cadastrar novo trabalhador
+    When Eu crio um trabalhador com nome_completo 'Rodrigo Silva', data_de_nascimento '10/12/1979', email 'rodrigoze@gmail.com', telefone '87987654321', profissao 'Auxiliar de Limpeza', senha '123456'
+    And eu estou na pagina de edicao de trabalhador com nome_completo 'Rodrigo Silva', data_de_nascimento '10/12/1979', email 'rodrigoze@gmail.com', telefone '87987654321', profissao 'Auxiliar de Limpeza', senha '123456'
+    And eu edito um usuario com trabalhador nome_completo 'Rodrigo Bezerra', data_de_nascimento '10/12/1979', email 'rodrigoze@gmail.com', telefone '87987654321', profissao 'Auxiliar de Limpeza', senha '123456'
+    And eu clico em atualizar o trabalhador
+    Then eu vejo uma mensagem que o trabalhador foi atualizado com sucesso
