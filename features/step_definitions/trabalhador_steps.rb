@@ -49,17 +49,25 @@ Then('Eu vejo uma mensagem que o trabalhador com email {string} foi excluido') d
   expect(page).to have_current_path('/trabalhadors')
 end
 
-When('Eu clico para editar meu email {string}') do |email|
-  expect(page).to have_content(email)
+#EDITAR
+
+When('eu estou na pagina de edicao de trabalhador com nome_completo {string}, data_de_nascimento {string}, email {string}, telefone {string}, profissao {string}, senha {string}') do |nome_completo, data_de_nascimento, email, telefone, profissao, senha|
+  click_link 'Edit this trabalhador'
+end
+
+When('eu edito um usuario com trabalhador nome_completo {string}, data_de_nascimento {string}, email {string}, telefone {string}, profissao {string}, senha {string}') do |novonome, data_de_nascimento, email, telefone, profissao, senha|
+  fill_in 'trabalhador[nome_completo]', :with => novonome
+  fill_in 'trabalhador[data_de_nascimento]', :with => data_de_nascimento
+  fill_in 'trabalhador[email]', :with => email
+  fill_in 'trabalhador[telefone]', :with => telefone
+  fill_in 'trabalhador[profissao]', :with => profissao
+  fill_in 'trabalhador[senha]', :with => senha
+end
+
+When('eu clico em atualizar o trabalhador') do
   click_button 'Update Trabalhador'
 end
 
-When('Altero o email para {string}') do |emailnovo|
-  fill_in 'trabalhador[email]', :with => emailnovo
-  click_button 'Update Trabalhador'
-  expect(page).to have_content(emailnovo)
-end
-
-Then('Eu vejo uma mensagem que o cadastro foi atualizado') do
-  expect(page).to have_content('Trabalhador was successfully updated')
+Then('eu vejo uma mensagem que o trabalhador foi atualizado com sucesso') do
+  expect(page).to have_content("Trabalhador was successfully updated")
 end
