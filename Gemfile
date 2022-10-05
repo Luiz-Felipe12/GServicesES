@@ -77,7 +77,7 @@ group :test do
   gem 'database_cleaner'
 end
 
- group :actions do
+ group :production, :actions do
 	gem 'pg'
 	gem 'activerecord-postgresql-adapter'
 end
