@@ -1,0 +1,17 @@
+<p style="color: green"><%=notice %></p>
+
+<h1> Servicos Criados</h1>
+
+<div id = "servicos">
+  <% @servicos.each do |servico| %>
+    <%=render servico %>
+    <p>
+      <%=link_to "Show this servico", servico %>
+    </p>
+  <% end %>
+
+</div>
+
+<br>
+
+<<%=link_to "Voltar", :back %>
