@@ -31,7 +31,7 @@
 
   <p>
     <strong>Trabalhador:</strong>
-    <%= servico.trabalhador_id %>
+    <%= Trabalhador.find(servico.trabalhador_id).nome_completo %>
   </p>
 
 </div>
