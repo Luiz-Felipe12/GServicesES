@@ -1,6 +1,6 @@
 class Cliente < ApplicationRecord
-  has_many :contratos
-  has_many :servicos, through: :contratos
+  has_many :contratoes
+  has_many :servicos, through: :contratoes
 
   validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-z ]+\z/}, length: {minimum: 8, maximum: 80}
   validates :data_de_nascimento, presence: {message: 'Data de nascimento obrigatória'}

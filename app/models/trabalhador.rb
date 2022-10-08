@@ -1,7 +1,7 @@
 class Trabalhador < ApplicationRecord
 
   has_many :servicos, dependent: :destroy
-  has_many :contratos, through: :servicos
+  has_many :contratoes, through: :servicos
 
   validates :nome_completo, presence: {message: 'Nome completo obrigatório'}, format: {with: /\A[a-zA-z ]+\z/}, length: {minimum: 8, maximum: 80}
   validates :data_de_nascimento, presence: {message: 'Data de nascimento obrigatória'}

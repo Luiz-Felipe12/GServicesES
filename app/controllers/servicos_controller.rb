@@ -19,9 +19,15 @@ class ServicosController < ApplicationController
   def edit
   end
 
+  def ListagemServicos
+    @servicos = Servico.where(trabalhador_id: params[:trabalhador_id])
+  end
+
   # POST /servicos or /servicos.json
   def create
+    @trabalhador = Trabalhador.find(servico_params[:trabalhador_id])
     @servico = Servico.new(servico_params)
+    @trabalhador.servicos << @servico
 
     respond_to do |format|
       if @servico.save
