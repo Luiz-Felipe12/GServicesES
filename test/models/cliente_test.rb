@@ -23,18 +23,8 @@ class ClienteTest < ActiveSupport::TestCase
   end
 
   test 'salvar cliente com telefone incorreto' do
-    cliente = Cliente.new nome_completo: 'Maria José',
-                          data_de_nascimento: Time.zone.today,
-                          cpf: '00221154822',
-                          email: 'mariaj@gmail.com',
-                          telefone: '8722113344',
-                          logradouro: 'avenida Santo Amaro',
-                          complemento: 'primeiro andar',
-                          bairro: 'Boa Vista',
-                          cidade: 'Garanhuns',
-                          cep: '11223345',
-                          senha: '951248762154'
-    assert_not cliente.save
+    @cliente.telefone = '8722113344'
+    assert_not @cliente.valid?
   end
 
   test 'salvar cliente com email existente' do
