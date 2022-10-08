@@ -4,19 +4,22 @@ class ClienteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  def setup
+    @cliente = Cliente.new(nome_completo:'Mauricio Lopes',
+                           data_de_nascimento: Time.zone.today,
+                           cpf: '11223344556',
+                           email: 'mauricio@gmail.com',
+                           telefone: '87987562145',
+                           logradouro: 'rua da madeira',
+                           complemento: 'casa',
+                           bairro: 'Centro',
+                           cidade: 'Garanhuns',
+                           cep: '00111222',
+                           senha: '11554896')
+  end
+
   test 'salvar cliente com dados validos' do
-    cliente = Cliente.new nome_completo: 'Mauricio Lopes',
-                          data_de_nascimento: Time.zone.today,
-                          cpf: '11223344556',
-                          email: 'mauricio@gmail.com',
-                          telefone: '87987562145',
-                          logradouro: 'rua da madeira',
-                          complemento: 'casa',
-                          bairro: 'Centro',
-                          cidade: 'Garanhuns',
-                          cep: '00111222',
-                          senha: '11554896'
-    assert cliente.save
+    assert @cliente.valid?
   end
 
   test 'salvar cliente com telefone incorreto' do
