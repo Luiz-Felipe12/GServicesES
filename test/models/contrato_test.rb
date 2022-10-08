@@ -52,7 +52,8 @@ class ContratoTest < ActiveSupport::TestCase
                           data: Time.zone.today,
                           horario_inicio: Time.zone.today,
                           horario_temino: Time.zone.today,
-                          preco: 100.90
+                          preco: 100.90,
+                          trabalhador_id: trabalhador.id
     assert_not servico.save
     contrato = Contrato.new cliente_id: cliente.id
     assert_not contrato.save
