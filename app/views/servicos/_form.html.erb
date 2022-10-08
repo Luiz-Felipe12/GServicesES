@@ -41,9 +41,9 @@
     <%= form.text_field :preco %>
   </div>
 
-  <div>
-    <%= form.label :trabalhador_id, style: "display: block" %>
-    <%= form.text_field :trabalhador_id %>
+  <div class="field">
+    <%= form.label :trabalhador_id %>
+    <%= form.collection_select(:trabalhador_id, Trabalhador.all, :id, :nome_completo,{:selected => @servico.trabalhador_id})%>
   </div>
 
   <div>

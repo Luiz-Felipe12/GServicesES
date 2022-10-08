@@ -8,6 +8,7 @@ class TrabalhadorsController < ApplicationController
 
   # GET /trabalhadors/1 or /trabalhadors/1.json
   def show
+    @trabalhador = Trabalhador.all.where(id:params[:id]).first
   end
 
   # GET /trabalhadors/new
@@ -52,8 +53,16 @@ class TrabalhadorsController < ApplicationController
     @trabalhador.destroy
 
     respond_to do |format|
-      format.html { redirect_to trabalhadors_url, notice: "Trabalhador was successfully destroyed." }
+      format.html { redirect_to trabalhadors_index_path, notice: "Trabalhador was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def delete
+    @trabalhador = Trabalhador.where("id = ?", params[:id]).first
+    @trabalhador.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: "Trabalhador was successfully destroyed." }
     end
   end
 
