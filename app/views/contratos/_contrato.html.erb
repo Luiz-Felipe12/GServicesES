@@ -1,12 +1,12 @@
 <div id="<%= dom_id contrato %>">
   <p>
     <strong>Cliente:</strong>
-    <%= Cliente.find(contrato.cliente_id).nome_completo%>
+    <%= contrato.cliente_id %>
   </p>
 
   <p>
     <strong>Servico:</strong>
-    <%= Servico.find(contrato.servico_id).nome %>
+    <%= contrato.servico_id %>
   </p>
 
 </div>

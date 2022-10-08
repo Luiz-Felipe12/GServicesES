@@ -1,15 +1,113 @@
 <p style="color: green"><%= notice %></p>
+<head>
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+          font-family: 'Open Sans', sans-serif;
+      }
 
-<h1>Clientes</h1>
+      ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+      ul li a{
+          text-decoration: none;
+      }
 
-<div id="clientes">
-  <% @clientes.each do |cliente| %>
-    <p>
-      <%= link_to "Ver Contratos", contratos_path(@contratoes)%>
-    </p>
-    <p>
-      <%= link_to "Show this cliente", cliente %>
-    </p>
-  <% end %>
+      .flex-container{
+          display: flex;
+          max-width: 992px;
+          margin: auto;
+          width: 100%;
+          min-width: 320px;
+      }
+
+      header{
+          background-color: darkblue;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          color: white;
+          margin-bottom: 8px;
+      }
+      header .list-items{
+          display: flex;
+          width: 100%;
+          max-width: 260px;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 10px;
+      }
+      .list-items li a{
+          color: white;
+      }
+
+      header .menu{
+          justify-content: space-between;
+      }
+      .apresentação{
+          align-items: center;
+          justify-content: space-between;
+      }
+      .apresentação .texto-apresentação{
+          min-height: 200px;
+          color: darkblue;
+          font-size:18px ;
+          margin-top: 30px;
+
+      }
+      .btn{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          text-decoration: none;
+      }
+      /*mobile*/
+      @media(max-width: 992px){
+          .flex-container{
+              flex-direction: column;
+          }
+          .apresentação{
+              flex-direction: column-reverse;
+          }
+
+      }
+  </style>
+<body>
+<header>
+  <div class="flex-container menu">
+    <div><h1>Clientes</h1></div>
+    <ul class="list-items">
+      <h2>
+        <li><a><%= link_to "Ver Contratos", contratos_path %></a></li>
+      </h2>
+    </ul>
+
+  </div>
+</header>
+
+<div class="flex-container apresentação">
+  <div class="texto-apresentação">
+    <ul class="list-items">
+      <div id="clientes">
+        <% @clientes.each do |cliente| %>
+          <%= render cliente %>
+          <li class="btn"><%= link_to "Criar Cliente", new_cliente_path %></li>
+          <li class="btn"><%= link_to "Mostrar esse Cliente", cliente %></li>
+        <% end %>
+      </div>
+    </ul>
+  </div>
 </div>
-<%= link_to "New cliente", new_cliente_path %>
+</body>
+
