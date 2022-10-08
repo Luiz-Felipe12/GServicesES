@@ -4,7 +4,9 @@
 
 <div id="clientes">
   <% @clientes.each do |cliente| %>
-    <%= render cliente %>
+    <p>
+      <%= link_to "Ver Contratos", contratos_path(@contratoes)%>
+    </p>
     <p>
       <%= link_to "Show this cliente", cliente %>
     </p>

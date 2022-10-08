@@ -1,11 +1,153 @@
-<h1 style="color: #B00100">Bem vindo ao Rails no Heroku</h1>
 
-<h3>Administrador</h3>
-<%=link_to 'Cadastrar', new_administrador_path %>
-</br>
+<head>
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+          font-family: 'Open Sans', sans-serif;
+      }
 
-<h3>Cliente</h3>
-<%=link_to 'Cadastrar', new_cliente_path %>
+      ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+      ul li a{
+          text-decoration: none;
+      }
 
-<h3>Trabalhador</h3>
-<%=link_to 'Cadastrar', new_trabalhador_path %>
+      .flex-container{
+          display: flex;
+          max-width: 992px;
+          margin: auto;
+          width: 100%;
+          min-width: 320px;
+      }
+
+      header{
+          background-color: darkblue;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          color: white;
+      }
+      header .list-items{
+          display: flex;
+          width: 100%;
+          max-width: 260px;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .list-items li a{
+          color: white;
+      }
+
+      header .menu{
+          justify-content: space-between;
+      }
+      .apresentação{
+          height: 100vh;
+          align-items: center;
+          justify-content: space-between;
+      }
+      .apresentação .texto-apresentação{
+          min-height: 200px;
+
+      }
+
+
+      .btn{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+
+      #quem-somos h2{
+          font-size: 32px;
+          color: darkblue;
+          display: flex;
+          margin-bottom: 20px;
+      }
+      .list-serviços .item-serviço{
+          text-align: center;
+      }
+      .item-serviço a {
+          width: 220px;
+          background-color: white;
+          border-radius: 30px;
+          height: 50px;
+          margin-top: 20px;
+          text-align: center;
+          line-height: 50px;
+          padding: 5px 10px ;
+          color: darkblue;
+          text-decoration: none;
+          font-size: 12px;
+          font-weight: 700;
+      }
+      .btn{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+      .item-plano .btn{
+          margin: auto;
+          margin-bottom: 20px
+      }
+      .item-plano h3{
+          font-size: 24px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      /*mobile*/
+      @media(max-width: 992px){
+          .flex-container{
+              flex-direction: column;
+          }
+          .apresentação{
+              flex-direction: column-reverse;
+          }
+
+      }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="flex-container menu">
+    <div><h1>GServicesES</h1></div>
+    <ul class="list-items">
+      <li><a href="https://github.com/GServicesES/GServicesES">Github</a></li>
+      <li><a><%=link_to 'Adiministrador', new_administrador_path %></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="flex-container apresentação">
+  <div class="texto-apresentação">
+    <ul class="list-items">
+      <li class="btn"> <%=link_to 'Cadastrar Cliente', new_cliente_path %></li>
+      <li class="btn"> <%=link_to 'Cadastrar Trabalhador', new_trabalhador_path %></li>
+    </ul>
+  </div>
+</div>
+</body>
