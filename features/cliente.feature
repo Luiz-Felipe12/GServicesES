@@ -35,3 +35,4 @@ Scenario: editar cadastro de cliente corretamente
     And edito os dados com nome 'cliente teste one', email 'cliente1@gmail.com', logradouro 'Rua seis', complemento 'numero 12, casa'
     When clico em atualizar cliente
     Then vejo uma mensagem informando que o cliente foi atualizado com sucesso
+
