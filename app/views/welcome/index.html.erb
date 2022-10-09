@@ -85,8 +85,8 @@
   <div class="flex-container menu">
     <div><h1>GServicesES</h1></div>
     <ul class="list-items">
-      <li><a href="https://github.com/GServicesES/GServicesES">Github</a></li>
-      <li><a><%=link_to 'Adiministrador', new_administrador_path %></a></li>
+      <li><a href="https://github.com/GServicesES/GServicesES" target="_blank">Github</a></li>
+      <li><a><%=link_to 'Adiministrador', administradors_path %></a></li>
     </ul>
   </div>
 </header>
@@ -96,6 +96,8 @@
     <ul class="list-items">
       <li class="btn"> <%=link_to 'Cadastrar Cliente', new_cliente_path %></li>
       <li class="btn"> <%=link_to 'Cadastrar Trabalhador', new_trabalhador_path %></li>
+      <li class="btn"><%= link_to "Ver todos os Clientes", clientes_path %></li>
+      <li class="btn"><%= link_to "Ver todos os Trabalhadores", trabalhadors_path %></li>
     </ul>
   </div>
 </div>
