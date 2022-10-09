@@ -1,9 +1,117 @@
-<h1>New contrato</h1>
+<head>
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+          font-family: 'Open Sans', sans-serif;
+      }
 
-<%= render "form", contrato: @contrato %>
+      ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+      ul li a{
+          text-decoration: none;
+      }
 
-<br>
+      .flex-container{
+          display: flex;
+          max-width: 992px;
+          margin: auto;
+          width: 100%;
+          min-width: 320px;
+      }
 
-<div>
-  <%= link_to "Back to contratos", contratos_path %>
+      header{
+          background-color: darkblue;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          color: white;
+          margin-bottom: 8px;
+      }
+      header .list-items{
+          display: flex;
+          width: 100%;
+          max-width: 260px;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .list-items li a{
+          color: white;
+      }
+
+      header .menu{
+          justify-content: space-between;
+      }
+      .apresentação{
+          align-items: center;
+          justify-content: space-between;
+      }
+      .apresentação .texto-apresentação{
+          min-height: 200px;
+          color: darkblue;
+          font-size:18px ;
+
+      }
+      .btn{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+      input[type="submit" i]{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 20px;
+          border: none;
+          cursor: pointer;
+      }
+
+      /*mobile*/
+      @media(max-width: 992px){
+          .flex-container{
+              flex-direction: column;
+          }
+          .apresentação{
+              flex-direction: column-reverse;
+          }
+
+      }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="flex-container menu">
+    <div><h1>Novo Contrato</h1></div>
+  </div>
+</header>
+
+<div class="flex-container apresentação">
+  <div class="texto-apresentação">
+    <ul class="list-items">
+      <li> <%= render "form", contrato: @contrato %></li>
+      <li class="btn"><%= link_to "Ver todos os Contratos", contratos_path %></li>
+    </ul>
+  </div>
 </div>
+</body>
