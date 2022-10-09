@@ -19,8 +19,14 @@ Then('Eu vejo uma mensagem que o trabalhador {string} foi gerado') do |nome_comp
 end
 
 Then('Eu vejo uma mensagem de erro') do
-  expect(page).to have_no_content('Telefone para contato obrigatório precisa ter 11 digitos')
+  expect(page).to have_content('Telefone Precisa ter 11 dígitos')
 end
+
+Then('Eu vejo uma mensagem de erro por causa do nome') do
+  expect(page).to have_content('Nome completo is invalid Nome completo is too short (minimum is 8 characters)')
+
+end
+
 
 
 Given('Eu estou na pagina de trabalhador') do
@@ -44,8 +50,8 @@ When('Eu clico em minha conta com email {string}') do |nome_completo|
   click_button "Destroy this trabalhador"
 end
 
-Then('Eu vejo uma mensagem que o trabalhador com email {string} foi excluido') do |email|
-  expect(page).to have_no_content(email)
+Then('Eu vejo uma mensagem que o trabalhador foi excluido') do
+  expect(page).to have_content('Trabalhador was successfully destroyed.')
   expect(page).to have_current_path('/trabalhadors')
 end
 
