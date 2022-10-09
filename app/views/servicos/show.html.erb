@@ -1,10 +1,129 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @servico %>
+<head>
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+          font-family: 'Open Sans', sans-serif;
+      }
 
-<div>
-  <%= link_to "Edit this servico", edit_servico_path(@servico) %> |
-  <%= link_to "Voltar", root_path %>
+      ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+      ul li a{
+          text-decoration: none;
+      }
 
-  <%= button_to "Destroy this servico", @servico, method: :delete %>
+      .flex-container{
+          display: flex;
+          max-width: 992px;
+          margin: auto;
+          width: 100%;
+          min-width: 320px;
+      }
+
+      header{
+          background-color: darkblue;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          color: white;
+          margin-bottom: 8px;
+      }
+      header .list-items{
+          display: flex;
+          width: 100%;
+          max-width: 260px;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .list-items li a{
+          color: white;
+      }
+
+      header .menu{
+          justify-content: space-between;
+      }
+      .apresentação{
+          height: 100vh;
+          align-items: center;
+          justify-content: space-between;
+      }
+      .apresentação .texto-apresentação{
+          min-height: 200px;
+          color: darkblue;
+          font-size:18px ;
+
+      }
+      button{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 20px;
+          border: none;
+          cursor: pointer;
+      }
+      .btn{
+          background-color: darkblue;
+          color: white;
+          text-align: center;
+          border-radius: 30px;
+          width: 220px;
+          display: block;
+          text-decoration: none;
+          height: 50px;
+          line-height: 50px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          text-decoration: none;
+      }
+
+      /*mobile*/
+      @media(max-width: 992px){
+          .flex-container{
+              flex-direction: column;
+          }
+          .apresentação{
+              flex-direction: column-reverse;
+          }
+
+      }
+  </style>
+<body>
+<header>
+  <div class="flex-container menu">
+    <div>
+      <ul class="list-items">
+        <h1>
+          <li><a><%= link_to "GServicesES", root_path%></a></li>
+        </h1>
+      </ul>
+    </div>
+
+  </div>
+</header>
+
+<div class="flex-container apresentação">
+  <div class="texto-apresentação">
+    <ul class="list-items">
+      <li> <%= render @servico %></li>
+      <li class="btn"><%= link_to "Editar esse Servico", edit_servico_path(@servico) %></li>
+      <li class="btn"><%= link_to "Ver todos os Servicos", servicos_path %></li>
+      <li><%= button_to "Apagar Servico", @servico, method: :delete %></li>
+    </ul>
+  </div>
 </div>
+</body>
+

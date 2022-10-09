@@ -66,12 +66,13 @@ group :development do
   # gem "spring"
 end
 
-group :test do
+group :test, :actions do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'rspec'
+
 
   gem 'cucumber-rails',require: false
   gem 'database_cleaner'
