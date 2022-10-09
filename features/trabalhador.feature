@@ -16,13 +16,13 @@ Feature: Trabalhador
   Scenario: Criar um trabalhador com nome invalido
     Given Eu estou na pagina de cadastrar novo trabalhador
     When Eu crio um trabalhador com nome_completo '123', data_de_nascimento '10/12/1979', email 'reginasilva@gmail.com', telefone '87987654321', profissao 'Auxiliar de Limpeza', senha '123456'
-    Then  Eu vejo uma mensagem de erro
+    Then  Eu vejo uma mensagem de erro por causa do nome
 
   Scenario: Deletar um trabalhador
     Given Eu estou na pagina de trabalhador
     And o trabalhador com nome_completo 'Rodrigo Silva', data_de_nascimento '10/12/1979', email 'rodrigoze@gmail.com', telefone '87987654321', profissao 'Auxiliar de Limpeza', senha '123456' existe
     When Eu clico em minha conta com email 'rodrigoze@gmail.com'
-    Then Eu vejo uma mensagem que o trabalhador com email 'rodrigoze@gmail.com' foi excluido
+    Then Eu vejo uma mensagem que o trabalhador foi excluido
 
   Scenario: Editar nome trabalhador
     Given Eu estou na pagina de cadastrar novo trabalhador
