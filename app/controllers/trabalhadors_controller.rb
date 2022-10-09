@@ -53,7 +53,7 @@ class TrabalhadorsController < ApplicationController
     @trabalhador.destroy
 
     respond_to do |format|
-      format.html { redirect_to trabalhadors_index_path, notice: "Trabalhador was successfully destroyed." }
+      format.html { redirect_to trabalhadors_path, notice: "Trabalhador was successfully destroyed." }
       format.json { head :no_content }
     end
   end
