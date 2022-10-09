@@ -98,11 +98,11 @@
   <div class="texto-apresentação">
     <ul class="list-items">
       <div id="servicos">
+        <li class="btn"><%= link_to "Voltar a Pagina Inicial", root_path %></li>
         <% @servicos.each do |servico| %>
           <%= render servico %>
           <li class="btn"><%= link_to "Criar Servico", new_servico_path %></li>
           <li class="btn"><%= link_to "Mostrar esse Servico", servico %></li>
-          <li class="btn"><%= link_to "Voltar a Pagina Inicial", root_path %></li>
         <% end %>
       </div>
     </ul>

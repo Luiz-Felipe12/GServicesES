@@ -110,6 +110,7 @@
   <div class="texto-apresentação">
     <ul class="list-items">
       <div id="administradors">
+        <li class="btn"><%= link_to "Voltar a Pagina Inicial", root_path %></li>
         <% @administradors.each do |administrador| %>
           <%= render administrador %>
           <li class="btn"><%= link_to "Criar Administrador", new_administrador_path %></li>
