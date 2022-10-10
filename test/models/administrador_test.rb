@@ -20,8 +20,13 @@ class AdministradorTest < ActiveSupport::TestCase
   end
 
   test 'Criando cadastro de administrador com senha existente' do
-    @administrador.senha = '123456788'
-    assert_not @administrador.valid?
+    administrador=Administrador.new nome_completo: 'Garibaldo José',
+                                    data_de_nascimento: Time.zone.today,
+                                    email: 'garibaldo@gmail.com',
+                                    telefone:'40028922229',
+                                    senha:'123456788'
+
+    assert_not administrador.save
   end
 
 end
