@@ -105,9 +105,9 @@
     <ul class="list-items">
       <div id="trabalhadors">
         <li class="btn"><%= link_to "Voltar a Pagina Inicial", root_path %></li>
+        <li class="btn"><%= link_to "Criar Trabalhador", new_trabalhador_path %></li>
         <% @trabalhadors.each do |trabalhador| %>
           <%= render trabalhador %>
-          <li class="btn"><%= link_to "Criar Trabalhador", new_trabalhador_path %></li>
           <li class="btn"><%= link_to "Mostrar esse Trabalhador", trabalhador %></li>
         <% end %>
       </div>
