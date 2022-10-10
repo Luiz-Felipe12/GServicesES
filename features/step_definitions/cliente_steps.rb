@@ -1,6 +1,6 @@
 Given('estou na pagina de cadastrar cliente') do
   visit '/clientes/new'
-  expect(page).to have_content('New cliente')
+  expect(page).to have_current_path ('/clientes/new')
   
 end
 
@@ -59,10 +59,10 @@ When('eu entro na pagina de clientes') do
 end
 
 When('clico em apagar cliente com o nome {string}') do |cliente|
-  visit '/clientes'
-  click_link 'Show this cliente'
+  #visit '/clientes'
+  #click_link 'Mostrar esse Cliente'
   expect(page).to have_content(cliente)
-  click_button 'Destroy this cliente'
+  click_button 'Apagar esse Cliente'
   
 end
 
@@ -71,10 +71,10 @@ Then('vejo uma mensagem informando que o cliente foi removido do sistema') do
 end
 
 When('clico em editar cliente com nome {string}') do |cliente|
-  visit '/clientes'
-  click_link 'Show this cliente'
+  #visit '/clientes'
+  #click_link 'Mostrar esse Cliente'
   expect(page).to have_content(cliente)
-  click_link 'Edit'
+  click_link 'Editar esse Cliente'
 end
 
 When('edito os dados com nome {string}, email {string}, logradouro {string}, complemento {string}') do |nome, email, logradouro, complemento|

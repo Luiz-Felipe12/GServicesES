@@ -59,7 +59,7 @@ end
 
 When('Eu clico em meu cadastro com email {string}') do |nome_completo|
   expect(page).to have_content(nome_completo)
-  click_button "Destroy this administrador"
+  click_button "Apagar Administrador"
 end
 
 Then('Eu vejo uma mensagem que o administrador com email {string} foi excluido') do |email|
@@ -85,7 +85,7 @@ When('Eu crio um administrador com nome_completo  {string}, data_de_nascimento {
 end
 
 When('eu estou na pagina de edicao de administrador com nome_completo {string}, data_de_nascimento {string},email {string}, telefone {string},senha {string}') do |nome_completo, data_de_nascimento, email, telefone, senha|
-  click_link 'Edit this administrador'
+  click_link 'Editar Administrador'
 end
 
 When('eu edito um usuario com administrador nome_completo {string}, data_de_nascimento {string},email {string}, telefone {string},senha {string}') do |nomenovo, data_de_nascimento, email, telefone, senha|

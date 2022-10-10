@@ -1,6 +1,6 @@
 Given('estou na pagina de contrato') do
     visit '/contratos/new'
-    expect(page).to have_content('New contrato')
+    expect(page).to have_current_path('/contratos/new')
 end
   
 When('existe cliente com nome_completo {string}, data de nascimento {string},cpf {string},email {string}, telefone {string}, logradouro {string}, complemento {string}, bairro {string}, cidade {string}, cep {string}, senha {string}') do | nome, data_nascimento, cpf, email, telefone, logradouro, complemento, bairro, cidade, cep, senha|
@@ -45,10 +45,12 @@ When('existe um servico com nome {string}, descricao {string}, data {string}, ho
 end
 
     
-When('eu preencho o contrato com o cliente de id {string} e servico de id {string}') do |id1, id2|
+When('eu preencho o contrato com o cliente de nome {string} e servico de nome {string}') do |id1, id2|
     visit '/contratos/new'
-    fill_in 'contrato[cliente_id]', :with => id1
-    fill_in 'contrato[servico_id]', :with => id2
+    select id1, :from => 'contrato[cliente_id]'
+    #fill_in 'contrato[cliente_id]', :with => id1
+    select id2, :from => 'contrato[servico_id]'
+    #fill_in 'contrato[servico_id]', :with => id2
 end
     
 When('eu clico em criar contrato') do
@@ -56,28 +58,52 @@ When('eu clico em criar contrato') do
 end
     
 Then('vejo uma mensagem que o contrato foi criado com sucesso') do
-    expect(page).to have_content('Contrato was successfully created.')
+    expect(page).to have_content('Contrato was successfully created')
 end
 
   
 Then('vejo uma mensagem de erro informando que o cliente nao existe e o contrato nao foi criado') do
-   expect(page).to have_content("Cliente must exist")
+   expect(page).to have_content("Cliente must exist Cliente can't be blank")
 end
 
 Then('vejo uma mensagem de erro informando que o servico nao existe e o contrato nao foi criado') do
     expect(page).to have_content("Servico must exist")
 end
 
-When('eu clico em apagar o contrato de servico de nome {string}') do |nome|
-    visit '/servicos'
-    click_link 'Show this servico'
-    expect(page).to have_content(nome)
-    click_button 'Destroy this servico'
+When('eu clico em apagar o contrato de servico') do 
+    visit '/contratos'
+    click_link "Mostrar esse Contrato"
+    click_button "Apagar esse Contrato"
+    
+    #xpect(page).to have_content(nome)
+    #click_button "Apagar esse Contrato"
 end
   
 Then('eu vejo uma mensagem informando que o contrato foi apagado com sucesso') do
-    expect(page).to have_content("Servico was successfully destroyed.")
+    expect(page).to have_content("Contrato was successfully destroyed.")
 end
   
-
+When('eu preencho o contrato com o servico de nome {string}') do |servico|
+    visit '/contratos/new'
+    select servico, :from => 'contrato[servico_id]'
+end
   
+When('eu preencho o contrato com o cliente de nome {string}') do |string|
+    visit '/contratos/new'
+    select string, :from => 'contrato[cliente_id]'
+end
+
+When('eu mudo o servico contratado para {string}') do |servico|
+    visit '/contratos/new'
+    select servico, :from => 'contrato[servico_id]'
+    expect(page).to have_content(servico)
+    #click_link 'Mostrar esse Contrato'
+end
+
+Then('eu vejo uma mensagem de que o servico foi editado') do
+    expect(page).to have_content("Contrato was successfully created")
+end
+
+When('clico em atualizar contrato') do
+    click_button 'Create Contrato'
+end

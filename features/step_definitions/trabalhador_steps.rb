@@ -47,7 +47,7 @@ end
 
 When('Eu clico em minha conta com email {string}') do |nome_completo|
   expect(page).to have_content(nome_completo)
-  click_button "Destroy this trabalhador"
+  click_button "Apagar Trabalhador"
 end
 
 Then('Eu vejo uma mensagem que o trabalhador foi excluido') do
@@ -58,7 +58,7 @@ end
 #EDITAR
 
 When('eu estou na pagina de edicao de trabalhador com nome_completo {string}, data_de_nascimento {string}, email {string}, telefone {string}, profissao {string}, senha {string}') do |nome_completo, data_de_nascimento, email, telefone, profissao, senha|
-  click_link 'Edit this trabalhador'
+  click_link 'Editar este Trabalhador'
 end
 
 When('eu edito um usuario com trabalhador nome_completo {string}, data_de_nascimento {string}, email {string}, telefone {string}, profissao {string}, senha {string}') do |novonome, data_de_nascimento, email, telefone, profissao, senha|
