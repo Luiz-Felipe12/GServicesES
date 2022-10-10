@@ -38,7 +38,7 @@ class ContratosController < ApplicationController
   def update
     respond_to do |format|
       if @contrato.update(contrato_params)
-        format.html { redirect_to contrato_url(@contrato), notice: "Contrato was successfully updated." }
+        format.html { redirect_to contratos_path(@contrato), notice: "Contrato was successfully updated." }
         format.json { render :show, status: :ok, location: @contrato }
       else
         format.html { render :edit, status: :unprocessable_entity }
