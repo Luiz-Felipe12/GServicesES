@@ -63,7 +63,7 @@ end
 
 When('Eu clico em servico nome {string}') do |nome|
   expect(page).to have_content(nome)
-  click_button "Destroy this servico"
+  click_button "Apagar Servico"
 end
 
 Then('Eu vejo uma mensagem que o servico foi excluido') do
