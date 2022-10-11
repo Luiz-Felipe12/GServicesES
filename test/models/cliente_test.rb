@@ -28,7 +28,17 @@ class ClienteTest < ActiveSupport::TestCase
   end
 
   test 'salvar cliente com email existente' do
-    @cliente.email = 'mariaj@gmail.com'
-    assert_not @cliente.valid?
+    cliente = Cliente.new nome_completo: 'Maria José Oliveira',
+                          data_de_nascimento: Time.zone.today,
+                          cpf: '84955787544',
+                          email: 'mariaj@gmail.com',
+                          telefone: '8722113344',
+                          logradouro: 'rua Carlos de Andrade',
+                          complemento: 'casa',
+                          bairro: 'Centro',
+                          cidade: 'Garanhuns',
+                          cep: '11224455',
+                          senha: '762154951248'
+    assert_not cliente.save
   end
 end

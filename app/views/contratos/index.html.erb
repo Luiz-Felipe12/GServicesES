@@ -103,9 +103,9 @@
     <ul class="list-items">
       <div id="contratos">
         <li class="btn"><%= link_to "Voltar a Pagina Inicial", root_path %></li>
+        <li class="btn"><%= link_to "Criar Contrato", new_contrato_path %></li>
         <% @contratos.each do |contrato| %>
           <%= render contrato %>
-          <li class="btn"><%= link_to "Criar Contrato", new_contrato_path %></li>
           <li class="btn"><%= link_to "Mostrar esse Contrato", contrato %></li>
         <% end %>
       </div>
